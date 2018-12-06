@@ -12,11 +12,11 @@ class List extends Component {
 
     render() {
         return (
-            <div>
-                <ul className="List">
+            <div className="List">
+                <ul>
                     {<li>test</li>}
                 </ul>
-                <NewTask/>
+                <NewTask tasks={[{id: 1, desc: 'feed grass', status: 0}, {id: 1, desc: 'feed grass', status: 0}]}/>
             </div>
         );
     }
