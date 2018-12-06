@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import NewTask from './NewTask'
+import Task from "./Task";
 
 class List extends Component {
     constructor(props) {
@@ -14,7 +15,11 @@ class List extends Component {
         return (
             <div className="List">
                 <ul>
-                    {<li>test</li>}
+                    {
+                        this.state.tasks.map((task) => {
+                            return <Task id={task.id} desc={task.desc} status={task.status}/>
+                        })
+                    }
                 </ul>
                 <NewTask/>
             </div>
