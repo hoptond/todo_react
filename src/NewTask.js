@@ -3,19 +3,19 @@ import React, { Component } from 'react';
 class NewTask extends Component {
 
     submitData(e) {
-            e.preventDefault()
-            console.log('sent fetch data')
-            fetch('http://localhost:8080/todos/', {
-                method: 'post',
-                headers: {
-                    'Accept': 'application/json, text/plain, */*',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({desc: document.getElementById('newtask').value})
-            }).then(res => res.json())
-                .then(res => console.log(res));
+        e.preventDefault()
+        console.log('sent fetch data')
+        fetch('http://localhost:8080/todos/', {
+            method: 'post',
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({desc: document.getElementById('newtask').value})
+        }).then(res => res.json())
+            .then(res => console.log(res));
         document.getElementById('newtask').value = ''
-        }
+    }
 
 
     render() {
