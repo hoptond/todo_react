@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import './todo.css';
-import './'
+import List from './List'
 
 class App extends Component {
     render() {
         return (
-            <h1>Blue Todo</h1>
+            <div>
+                <h1>Blue Todo</h1>
+                <List />
+            </div>
         )
     }
 }
