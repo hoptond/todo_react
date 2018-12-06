@@ -14,6 +14,7 @@ class NewTask extends Component {
                 body: JSON.stringify({desc: document.getElementById('newtask').value})
             }).then(res => res.json())
                 .then(res => console.log(res));
+        document.getElementById('newtask').value = ''
         }
 
 
