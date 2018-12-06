@@ -7,7 +7,7 @@ class App extends Component {
         return (
             <div>
                 <h1>Blue Todo</h1>
-                <List />
+                <List tasks={[{id: 1, desc: 'feed grass', status: 0}, {id: 1, desc: 'feed grass', status: 0}]}/>
             </div>
         )
     }

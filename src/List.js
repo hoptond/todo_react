@@ -16,7 +16,7 @@ class List extends Component {
                 <ul>
                     {<li>test</li>}
                 </ul>
-                <NewTask tasks={[{id: 1, desc: 'feed grass', status: 0}, {id: 1, desc: 'feed grass', status: 0}]}/>
+                <NewTask/>
             </div>
         );
     }
