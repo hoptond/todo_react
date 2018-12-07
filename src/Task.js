@@ -25,7 +25,7 @@ class Task extends Component {
         }).then(res => res.json())
             .then(res => this.setState({
                 status: res.status
-            }), this.refreshPage());
+            }));
 
     }
 
