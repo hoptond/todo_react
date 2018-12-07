@@ -24,7 +24,6 @@ class NewTask extends Component {
         }).then(res => res.json())
             .then(res => console.log(res));
         document.getElementById('newtask').value = ''
-        console.log(this)
         this.refreshPage()
     }
 
