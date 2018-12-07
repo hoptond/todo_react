@@ -22,9 +22,8 @@ class NewTask extends Component {
             },
             body: JSON.stringify({desc: document.getElementById('newtask').value, status:false})
         }).then(res => res.json())
-            .then(res => console.log(res));
+            .then(this.refreshPage());
         document.getElementById('newtask').value = ''
-        this.refreshPage()
     }
 
     render() {
