@@ -10,10 +10,9 @@ class NewTask extends Component {
     submitData = (e) => {
         e.preventDefault()
         if(document.getElementById('newtask').value === '') {
-            console.log('field empty, not submitting')
+            //TODO: add visual indicator to that field should be inputted before the user proceeds
             return
         }
-        console.log('sent fetch data')
         fetch('http://localhost:8080/todos/', {
             method: 'post',
             headers: {

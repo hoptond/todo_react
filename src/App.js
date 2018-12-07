@@ -25,7 +25,6 @@ class App extends Component {
     }
 
     async getTasks() {
-        console.log('getting tasks')
         let response = await fetch('http://localhost:8080/todos/', {
             method: 'get'
         })

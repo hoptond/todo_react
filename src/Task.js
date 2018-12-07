@@ -9,12 +9,9 @@ class Task extends Component {
             status: props.status
         };
         this.refreshPage = this.props.onSubmitData.bind(this)
-        console.log(this.state)
     }
 
     submitData = (e) => {
-        console.log(this.state)
-        console.log('sent put data')
         fetch('http://localhost:8080/todos/' + this.state.id, {
             method: 'put',
             headers: {
