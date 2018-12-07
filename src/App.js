@@ -4,6 +4,7 @@ import List from './List'
 import './Update.js'
 
 class App extends Component {
+
     constructor(props) {
         super(props)
         this.state = {
@@ -18,12 +19,13 @@ class App extends Component {
         return (
             <div>
                 <h1>Blue Todo</h1>
-                <List tasks={tasks} onsubmit={this.getTasks}/>
+                <List tasks={tasks} onSubmitData={this.getTasks}/>
             </div>
         )
     }
 
     async getTasks() {
+        console.log('getting tasks')
         let response = await fetch('http://localhost:8080/todos/', {
             method: 'get'
         })

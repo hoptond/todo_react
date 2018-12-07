@@ -2,7 +2,12 @@ import React, { Component } from 'react';
 
 class NewTask extends Component {
 
-    submitData(e) {
+    constructor(props) {
+        super(props)
+        this.refreshPage = this.props.onSubmitData.bind(this)
+    }
+
+    submitData = (e) => {
         e.preventDefault()
         if(document.getElementById('newtask').value === '') {
             console.log('field empty, not submitting')
@@ -19,6 +24,8 @@ class NewTask extends Component {
         }).then(res => res.json())
             .then(res => console.log(res));
         document.getElementById('newtask').value = ''
+        console.log(this)
+        this.refreshPage()
     }
 
     render() {
@@ -26,7 +33,7 @@ class NewTask extends Component {
             <form onSubmit={this.submitData}>
                 <li>
                     <input name="desc" id="newtask" ref={(input) => this.textInput = input} type="text" placeholder="Enter a new task here..."/>
-                        <input type="submit" value="SUBMIT" onClick={this.props.onClick}/>
+                        <input type="submit" value="SUBMIT"/>
                 </li>
             </form>
         );
