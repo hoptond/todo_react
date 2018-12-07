@@ -8,13 +8,13 @@ class Task extends Component {
             desc: props.desc,
             status: props.status
         };
-
         this.refreshPage = this.props.onSubmitData.bind(this)
+        console.log(this.state)
     }
 
     submitData = (e) => {
         console.log(this.state)
-        console.log('sent fetch data')
+        console.log('sent put data')
         fetch('http://localhost:8080/todos/' + this.state.id, {
             method: 'put',
             headers: {
@@ -23,27 +23,24 @@ class Task extends Component {
             },
             body: JSON.stringify({status: !this.state.status})
         }).then(res => res.json())
-            .then(res => console.log(res));
-        this.refreshPage()
+            .then(res => this.setState({
+                status: res.status
+            }), this.refreshPage());
+
     }
 
     render() {
         return (
             <li>
-                <input type="checkbox" id={this.state.id} name={this.state.id} checked={this.getCheckedStatus()} onClick={this.submitData}/>
+                <input type="checkbox"
+                       id={this.state.id}
+                       name={this.state.id}
+                       checked={this.state.status ? 'checked' : '' }
+                       onChange={this.submitData}/>
                     <span>{this.state.desc}</span>
             </li>
         );
     }
-
-    getCheckedStatus() {
-        if(this.state.status === true) {
-            return 'checked'
-        }
-        return ''
-    }
-
-
 }
 
 export default Task
