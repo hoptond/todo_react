@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './todo.css';
 import List from './List'
-import './Update.js'
 
 class App extends Component {
 
