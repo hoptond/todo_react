@@ -10,7 +10,7 @@ class List extends Component {
                 <ul>
                     {
                         this.props.tasks.map((task) => {
-                            return <Task id={task.id} desc={task.desc} status={task.status}/>
+                            return <Task id={task._id} desc={task.desc} status={task.status} onSubmitData={this.props.onSubmitData}/>
                         })
                     }
                 </ul>
