@@ -14,7 +14,7 @@ class List extends Component {
                         })
                     }
                 </ul>
-                <NewTask/>
+                <NewTask onClick={this.props.onsubmit}/>
             </div>
         );
     }

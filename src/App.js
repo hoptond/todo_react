@@ -18,7 +18,7 @@ class App extends Component {
         return (
             <div>
                 <h1>Blue Todo</h1>
-                <List tasks={tasks}/>
+                <List tasks={tasks} onsubmit={this.getTasks}/>
             </div>
         )
     }
